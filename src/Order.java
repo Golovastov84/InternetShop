@@ -1,7 +1,6 @@
 public class Order {
     public void addProduct(Product product) {
-        if(product.getPrice() > 50) {
-            product.setPrice(product.getPrice() - 25);
-        }
+        Product copy = new Product(product.getName(), product.getPrice()); // копия объекта
+        // Product copy = product; // копия ссылки на объект
     }
 }
