@@ -3,7 +3,11 @@ public class Basket {
     private int totalPrice = 0;
     private int limit;
 
+    private static int count = 0;
+
     public Basket() { // конструктор
+        //count++;
+        increaseCount(1); // Статический метод можно вызвать из конструктора
         items = "Список товаров:";
         this.limit = 100000;
     }
@@ -18,6 +22,15 @@ public class Basket {
         this.items = this.items + "\n" + items;
         this.totalPrice = totalPrice;
     }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void increaseCount(int count) {
+        Basket.count = Basket.count + count;
+    }
+
     public void add(String name, int price) {
         add(name, price, 1);
     }
